@@ -1,0 +1,826 @@
+/*Styles For Traversal Agent*/
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+/*Body Styles*/
+
+h1{
+	padding:0;
+	margin:0;
+}
+
+*{
+	padding:0;
+	margin:0;
+}
+
+body{
+	font-family:Lato;
+	font-weight:700;
+}
+
+/*Body Ends*/
+
+/*Beginning Styles*/	
+html,
+body,	
+.st-container,
+.st-pusher,
+.st-content{
+	height:100%;
+}
+
+.st-content{
+	overflow-y:scroll;
+	background:white;
+	-webkit-overflow-scrolling: touch;
+}
+
+.st-content,
+.st-content-inner {
+	position: relative;
+	height:100%;
+}
+
+.st-container {
+	position: relative;
+}
+
+.st-pusher {
+	position: relative;
+	left: 0;
+	z-index: 99;
+	height: 100%;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.st-pusher::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+}
+
+.st-menu-open .st-pusher::after {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+/*Hides The Navigation Bar*/
+.st-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	visibility: hidden;
+	width: 300px;
+	height: 100%;
+	background:rgba(33,33,33,1);
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.st-menu::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.st-menu-open .st-menu::after {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+}
+
+/*Body Format Finish*/
+
+/*Menu Styles*/
+
+.st-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration:none;
+}
+
+.st-menu h2 {
+	margin: 0;
+	padding: 1em;
+	color: rgba(0,0,0,0.4);
+	text-shadow: 0 0 1px rgba(0,0,0,0.1);
+	font-weight: 300;
+	font-size: 2em;
+	text-indent:8%;
+}
+
+.st-menu ul li a {
+	text-decoration:none;
+	display: block;
+	padding: 2.5em 1em 2.5em 1.2em;
+	outline: none;
+	box-shadow: inset 0 -1px rgba(0,0,0,0.2);
+	color: rgba(255,255,255,0.8);
+	letter-spacing: 2px;
+	transition:0.5s;
+}
+
+.st-menu ul li:first-child a {
+	box-shadow: inset 0 -1px rgba(0,0,0,0.2), inset 0 1px rgba(0,0,0,0.2);
+}
+
+.st-menu ul li a:hover {
+	text-decoration: none;
+	color: rgba(33,33,33,1);
+	background: rgba(255,255,255,1);
+}
+
+/*End Of Menu Styles*/
+
+/*Slide Transition*/
+
+.st-effect-9.st-container {
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+}
+
+.st-effect-9 .st-pusher {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.st-effect-9.st-menu-open .st-pusher {
+	-webkit-transform: translate3d(0, 0, -300px);
+	transform: translate3d(0, 0, -300px);
+}
+
+.st-effect-9.st-menu {
+	opacity: 1;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+
+.st-effect-9.st-menu-open .st-effect-9.st-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+/*End Of Effect*/
+
+/*Fallback*/
+
+/* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
+
+.no-csstransforms3d .st-pusher,
+.no-js .st-pusher {
+	padding-left: 300px;
+}
+
+
+body {
+	background: rgba(255,255,255,1);
+	color: #48a770;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	font-weight: 300;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: " ";
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.codrops-header,
+.codrops-top {
+	font-family: 'Lato', Arial, sans-serif;
+}
+
+.codrops-header {
+	margin: 0 auto 3em;
+	padding: 3em;
+	text-align: center;
+}
+
+.codrops-header h1 {
+	margin: 0;
+	font-weight: 300;
+	font-size: 2.625em;
+	line-height: 1.3;
+}
+
+.codrops-header span {
+	display: block;
+	padding: 0 0 0.6em 0.1em;
+	font-size: 60%;
+	color: #aca89a;
+}
+
+/* To Navigation Style */
+.codrops-top {
+	width: 100%;
+	text-transform: uppercase;
+	font-size: 0.69em;
+	line-height: 2.2;
+	font-weight: 400;
+	background: rgba(255,255,255,0.3);
+}
+
+.codrops-top a {
+	display: inline-block;
+	padding: 0 1em;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+}
+
+.codrops-top a:hover {
+	color: #333;
+}
+
+.codrops-top span.right {
+	float: right;
+}
+
+.codrops-top span.right a {
+	display: block;
+	float: left;
+}
+
+.codrops-icon:before {
+	margin: 0 4px;
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-family: 'codropsicons';
+	line-height: 1;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.codrops-icon-drop:before {
+	content: "\e001";
+}
+
+.codrops-icon-prev:before {
+	content: "\e004";
+}
+
+.main {
+	max-width: 69em;
+	margin: 0 auto;
+}
+
+/* Nav Bar Open*/
+button {
+	border: none;
+	padding: 1em 1.1em;
+	position:fixed;
+	left:5%;
+	top:5%;
+	background:none;
+	transition:0.5s ease-in-out;
+	z-index:1;
+}
+/* Overall Container For Pages*/
+#contain{
+	position:absolute;
+	height:500%;
+	width:100%;
+}
+
+/*First Landing*/
+
+#land{
+	height:20%;
+	width:100%;
+	background:rgba(44,62,80,1);
+}
+
+/* Logo On Land Page*/
+#imgland{
+	display:block;
+	margin:0 auto;
+	margin-top:3%;
+	animation:fading2 .8s;
+}
+/* Text On Landing Page*/
+#land h1{
+	margin:0;
+	padding:0;
+	color:rgba(255,255,255,1);
+	text-align:center;
+	font-family:Lato;
+	letter-spacing:5px;
+	padding-top:1em;
+	z-index:10000;
+	text-transform:uppercase;
+	font-size:4rem;
+}
+
+/*End Of Land*/
+
+/*Land Header*/
+
+#landheader{
+	width:100%;
+	height:2.5%;
+	background:rgba(249,251,251,1);
+}
+/* City Guide Header Styles*/
+#landheader h1{
+	padding:0;
+	margin:0;
+	text-align:center;
+	font-size:1.8rem;
+	padding-top:2%;
+	color:rgba(51,51,51,1);
+	letter-spacing:0.2em;
+	text-transform:uppercase;
+	font-weight:700;
+
+}
+
+/*End Header*/
+
+/*City Guide*/
+
+/* Overall Container For City Guides*/
+#land2{
+	height:24%;
+	width:100%;
+}
+
+/* Container For First Row Of Guides*/
+.guide{
+	width:100%;
+	height:50%;
+}
+
+/* Container For Second Row Of Guides*/
+.guide2{
+	width:100%;
+	height:50%;
+}
+
+/* Divide the Container Into Four Boxes*/
+.box{
+	height:100%;
+	width:50%;
+	text-align:center;
+}
+
+/* Center Header City Guide*/
+.box h1{
+	margin-top:22%;
+
+}
+
+/* Image Header Ex (London,San Francisco)*/
+.head{
+	color:white;
+	font-family:Lato;
+	text-transform:uppercase;
+	letter-spacing:0.2em;
+	font-size:3rem;
+	text-decoration:none;
+}
+
+/* Description For Images*/
+.box p{
+	color:white;
+	font-family:Lato;
+	text-transform:uppercase;
+	font-weight:700;
+	letter-spacing:2px;
+	margin-top:3%;
+	font-size:1.5rem;
+}
+
+.box hr{
+	width:15%;
+	border:4px solid white;
+	margin:0 auto;
+}
+
+.float{
+	float:left;
+}
+
+/*Background Images*/
+.img1{
+	background:url(../background/tokyo2.jpg);
+	background-size:cover;
+
+}	
+
+.img2{
+	background:url(../background/sing.jpg);
+	background-size:cover;
+}
+
+.img3{
+	background:url(../background/london.jpg);
+	background-size:cover;
+
+}
+
+.img4{
+	background:url(../background/sanfran2.jpg);
+	background-size:cover;
+}
+/* End Of Background*/
+
+/* Info About Traversal Agent*/
+#abouttrav{
+	height:2.5%;
+	width:100%;
+	background:rgba(249,251,251,1);
+}
+
+#land3{
+	height:13.5%;
+	width:100%;
+}
+
+#abouttrav h1{
+	padding:0;
+	margin:0;
+	text-align:center;
+	font-size:1.8rem;
+	padding-top:2%;
+	color:rgba(51,51,51,1);
+	letter-spacing:0.2em;
+	text-transform:uppercase;
+	font-weight:700;
+}
+
+#land3 h1{
+	text-align:center;
+	font-family:Lato;
+	color:rgba(51,51,51,1);
+	text-transform:uppercase;
+	letter-spacing:4px;
+	padding-top:2%;
+}
+
+#land3 p{
+	font-family:Lato;
+	color:rgba(51,51,51,1);
+	letter-spacing:2px;
+	line-height:120%;
+	width:80%;
+	margin:0 auto;
+	position:relative;
+	top:5%;
+	font-size:1.5rem;
+	text-align:center;
+}
+
+#land3 hr{
+	width:30%;
+	margin:0 auto;
+}
+
+#land3  img{
+	display:block;
+	margin:0 auto;
+	padding-top:2%;
+	padding-right:2%;
+}
+/* End Of Traversal Agent Info*/
+
+#agentheader{
+	width:100%;
+	height:2.5%;
+	background:rgba(249,251,251,1);
+}
+
+#agentheader h1{
+	padding:0;
+	margin:0;
+	text-align:center;
+	font-size:1.8rem;
+	padding-top:2%;
+	color:rgba(51,51,51,1);
+	letter-spacing:0.2em;
+	text-transform:uppercase;
+	font-weight:700;
+
+}
+
+/*Landing 4*/
+
+#land4{
+	height:17.5%;
+	width:100%;
+}
+
+#land4 h1{
+	padding:0;
+	margin:0;
+	text-align:center;
+	padding-top:2%;
+	text-transform:uppercase;
+	color:rgba(51,51,51,1);
+	letter-spacing:2px;
+}
+/* Size Of Each Description*/
+.box2{
+	width:29.33%;
+	height:70%;
+	background:red;
+	margin-right:2%;
+	margin-left:2%;
+	margin-top:3%;
+	background:rgba(249,251,251,1);
+	outline-width:2px;
+	outline-style:solid;
+	outline-color:black;
+}
+/* Styles For Image Link*/
+.box2 a{
+	display:block;
+	font-size:6em;
+	color:rgba(51,51,51,1);
+	text-align:center;
+	margin-left:20%;
+	margin-top:10%;
+	margin-bottom:15%;
+}
+
+/* Styles For Text Of Description*/
+.box2 p{
+	font-family:Lato;
+	color:rgba(51,51,51,1);
+	letter-spacing:2px;
+	line-height:110%;
+	width:80%;
+	margin:0 auto;
+	font-size:1.2rem;
+	text-align:center;
+
+}
+
+/*Contact Header*/
+
+#contact{
+	width:100%;
+	height:2.5%;
+	background:rgba(249,251,251,1);
+}
+
+#contact h1{
+	text-align:center;
+	font-size:2rem;
+	padding-top:2%;
+	color:rgba(51,51,51,1);
+	letter-spacing:0.3em;
+	text-transform:uppercase;
+	font-weight:700;
+}
+
+/* End Contact Header*/
+
+
+
+#land5{
+	height:20%;
+	width:100%;
+}
+/* Map Styles*/
+#map{
+	display:block;
+	height:30%;
+	width:100%;
+	padding:0;
+	margin:0;
+	background:red;
+}
+/* Contact Us Header*/
+#contactHeader{
+	text-align:center;
+	font-size:1.8rem;;
+	color:rgba(51,51,51,1);
+	letter-spacing:0.3em;
+	text-transform:uppercase;
+	font-weight:700;
+	background:#e9e9e7;
+}
+
+#form{
+	text-align:center;	
+}
+
+/* Input Styles For First Name,Last Name*/
+#form input[type="text"]{
+	display:block;
+	padding:1.2em;
+	width:30%;
+	font-family:Lato;
+	float:left;
+	letter-spacing:2px;
+	margin-left:10%;
+	margin-top:2.5%;
+	border:2px solid rgba(73, 106, 89, 0.5);
+	transition:.3s ease-in-out;
+}
+
+#form input[type="text"]:focus,
+#form input[type="text"].focus{
+	border: solid 2px rgba(73, 106, 89, 0.5);
+	background:#e9e9e7;
+}
+/* Input Styles For Email Address, Subject*/
+#form2 input[type="text"]{
+	display:block;
+	padding:1.2em;
+	width:30%;
+	font-style:Lato;
+	margin:0 auto;
+	float:left;
+	letter-spacing:2px;
+	margin-left:10%;
+	margin-top:2.5%;
+	border:2px solid rgba(73, 106, 89, 0.5);
+	transition:.3s ease-in-out;
+}
+
+#form2 input[type="text"]:focus,
+#form2 input[type="text"].focus{
+	border: solid 2px rgba(73, 106, 89, 0.5);
+	background:#e9e9e7;
+}
+/* Input For Text Area*/
+#form3 textarea{
+	display:block;
+	float:left;
+	width:74.5%;;
+	margin-left:10%;
+	margin-top:2.5%;
+	letter-spacing:2px;
+	font-style:Lato;
+	border:2px solid rgba(73, 106, 89, 0.5);
+	transition:.3s ease-in-out;
+}
+
+#form3 textarea:focus,
+#form3 textarea.focus{
+	border: solid 2px rgba(73, 106, 89, 0.5);
+	background:#e9e9e7;
+	
+}
+
+/* Submit Button Form*/
+.button{
+	text-decoration:none;
+	padding:1em 3em 1em 3em;
+	font-family:lato;
+	letter-spacing:2px;
+	border: 1px solid #0a2a3b;
+	text-transform:uppercase;
+	color:#0a2a3b;
+	float:left;
+	margin-left:43%;
+	margin-top:1.5%;
+	transition:.2s ease-in-out;
+}
+
+.button:hover{
+	color:white;
+	background:#0a2a3b;
+}
+
+/* Fading Animation*/
+ .fading-animation{
+	animation:fading 2s; 
+ }
+ 
+ /* Overlay Animation*/
+ .overlay1{
+	  position: absolute;
+	  top: 22.5%;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  height:12.05%;
+	  width:50%;
+	  opacity: 0;
+	  transition: .4s ease;
+	  background:black;
+ }
+ 
+/* Overlay For Images*/ 
+ .overlay2{
+	  position: absolute;
+	  top: 22.5%;
+	  bottom: 0;
+	  left: 50%;
+	  right: 0;
+	  height:12.05%;
+	  width:50%;
+	  opacity: 0;
+	  transition: .4s ease;
+	  background:black;
+ }
+ 
+ .overlay3{
+	  position: absolute;
+	  top: 34.55%;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  height:12.05%;
+	  width:50%;
+	  opacity: 0;
+	  transition: .4s ease;
+	  background:black;
+ }
+ 
+  .overlay4{
+	  position: absolute;
+	  top: 34.55%;
+	  bottom: 0;
+	  left: 50%;
+	  right: 0;
+	  height:12.05%;
+	  width:50%;
+	  opacity: 0;
+	  transition: .3s ease;
+	  background:black;
+ }
+ /* End OverLay Image*/
+ 
+
+
+.box:hover .hoverOver{
+  opacity: 0.8;
+}
+
+@keyframes fading{
+0%{opacity:0}
+100%{opacity:1}	
+}
+
+@keyframes fading2{
+0%{opacity:0}
+50%{opacity:0}
+100%{opacity:1}
+}
+
+@media screen and (max-width: 25em) {
+
+	.codrops-header {
+		font-size: 80%;
+	}
+
+	.codrops-top {
+		font-size: 120%;
+	}
+
+	.codrops-icon span {
+		display: none;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
